@@ -1,4 +1,4 @@
-defmodule Shlak.ErrorHelpers do
+defmodule Shlack.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -32,9 +32,9 @@ defmodule Shlak.ErrorHelpers do
     #     dgettext "errors", "is invalid"
     #
     if count = opts[:count] do
-      Gettext.dngettext(Shlak.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(Shlack.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(Shlak.Gettext, "errors", msg, opts)
+      Gettext.dgettext(Shlack.Gettext, "errors", msg, opts)
     end
   end
 end

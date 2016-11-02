@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with brunch.io to recompile .js and .css sources.
-config :shlak, Shlak.Endpoint,
+config :shlack, Shlack.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -16,7 +16,7 @@ config :shlak, Shlak.Endpoint,
 
 
 # Watch static and templates for browser reloading.
-config :shlak, Shlak.Endpoint,
+config :shlack, Shlack.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
@@ -34,10 +34,12 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :shlak, Shlak.Repo,
+config :shlack, Shlack.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "shlak_dev",
+  database: "shlack_dev",
   hostname: "localhost",
   pool_size: 10
+
+import_config "prod.secret.exs"

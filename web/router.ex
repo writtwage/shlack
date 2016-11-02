@@ -1,5 +1,5 @@
-defmodule Shlak.Router do
-  use Shlak.Web, :router
+defmodule Shlack.Router do
+  use Shlack.Web, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule Shlak.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", Shlak do
+  scope "/", Shlack do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Shlak do
+  # scope "/api", Shlack do
   #   pipe_through :api
   # end
 end

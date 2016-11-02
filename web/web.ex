@@ -1,12 +1,12 @@
-defmodule Shlak.Web do
+defmodule Shlack.Web do
   @moduledoc """
   A module that keeps using definitions for controllers,
   views and so on.
 
   This can be used in your application as:
 
-      use Shlak.Web, :controller
-      use Shlak.Web, :view
+      use Shlack.Web, :controller
+      use Shlack.Web, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -30,12 +30,12 @@ defmodule Shlak.Web do
     quote do
       use Phoenix.Controller
 
-      alias Shlak.Repo
+      alias Shlack.Repo
       import Ecto
       import Ecto.Query
 
-      import Shlak.Router.Helpers
-      import Shlak.Gettext
+      import Shlack.Router.Helpers
+      import Shlack.Gettext
     end
   end
 
@@ -49,9 +49,9 @@ defmodule Shlak.Web do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import Shlak.Router.Helpers
-      import Shlak.ErrorHelpers
-      import Shlak.Gettext
+      import Shlack.Router.Helpers
+      import Shlack.ErrorHelpers
+      import Shlack.Gettext
     end
   end
 
@@ -65,10 +65,10 @@ defmodule Shlak.Web do
     quote do
       use Phoenix.Channel
 
-      alias Shlak.Repo
+      alias Shlack.Repo
       import Ecto
       import Ecto.Query
-      import Shlak.Gettext
+      import Shlack.Gettext
     end
   end
 

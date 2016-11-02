@@ -1,3 +1,3 @@
-defmodule Shlak.LayoutViewTest do
-  use Shlak.ConnCase, async: true
+defmodule Shlack.LayoutViewTest do
+  use Shlack.ConnCase, async: true
 end

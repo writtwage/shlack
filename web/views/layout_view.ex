@@ -1,3 +1,3 @@
-defmodule Shlak.LayoutView do
-  use Shlak.Web, :view
+defmodule Shlack.LayoutView do
+  use Shlack.Web, :view
 end

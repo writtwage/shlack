@@ -1,5 +1,5 @@
-defmodule Shlak.ErrorView do
-  use Shlak.Web, :view
+defmodule Shlack.ErrorView do
+  use Shlack.Web, :view
 
   def render("404.html", _assigns) do
     "Page not found"

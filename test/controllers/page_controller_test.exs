@@ -1,5 +1,5 @@
-defmodule Shlak.PageControllerTest do
-  use Shlak.ConnCase
+defmodule Shlack.PageControllerTest do
+  use Shlack.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

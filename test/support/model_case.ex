@@ -1,4 +1,4 @@
-defmodule Shlak.ModelCase do
+defmodule Shlack.ModelCase do
   @moduledoc """
   This module defines the test case to be used by
   model tests.
@@ -16,20 +16,20 @@ defmodule Shlak.ModelCase do
 
   using do
     quote do
-      alias Shlak.Repo
+      alias Shlack.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import Shlak.ModelCase
+      import Shlack.ModelCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Shlak.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Shlack.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Shlak.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Shlack.Repo, {:shared, self()})
     end
 
     :ok
@@ -59,7 +59,7 @@ defmodule Shlak.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&Shlak.ErrorHelpers.translate_error/1)
+    |> Ecto.Changeset.traverse_errors(&Shlack.ErrorHelpers.translate_error/1)
     |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

@@ -1,4 +1,4 @@
-defmodule Shlak.ChannelCase do
+defmodule Shlack.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -20,22 +20,22 @@ defmodule Shlak.ChannelCase do
       # Import conveniences for testing with channels
       use Phoenix.ChannelTest
 
-      alias Shlak.Repo
+      alias Shlack.Repo
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
 
 
       # The default endpoint for testing
-      @endpoint Shlak.Endpoint
+      @endpoint Shlack.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Shlak.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Shlack.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Shlak.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Shlack.Repo, {:shared, self()})
     end
 
     :ok

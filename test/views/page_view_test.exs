@@ -1,3 +1,3 @@
-defmodule Shlak.PageViewTest do
-  use Shlak.ConnCase, async: true
+defmodule Shlack.PageViewTest do
+  use Shlack.ConnCase, async: true
 end

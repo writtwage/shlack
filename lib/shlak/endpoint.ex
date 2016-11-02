@@ -1,14 +1,14 @@
-defmodule Shlak.Endpoint do
-  use Phoenix.Endpoint, otp_app: :shlak
+defmodule Shlack.Endpoint do
+  use Phoenix.Endpoint, otp_app: :shlack
 
-  socket "/socket", Shlak.UserSocket
+  socket "/socket", Shlack.UserSocket
 
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phoenix.digest
   # when deploying your static files in production.
   plug Plug.Static,
-    at: "/", from: :shlak, gzip: false,
+    at: "/", from: :shlack, gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
   # Code reloading can be explicitly enabled under the
@@ -35,8 +35,8 @@ defmodule Shlak.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_shlak_key",
+    key: "_shlack_key",
     signing_salt: "oIG8cwXc"
 
-  plug Shlak.Router
+  plug Shlack.Router
 end

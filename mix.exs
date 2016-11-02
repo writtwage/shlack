@@ -1,8 +1,8 @@
-defmodule Shlak.Mixfile do
+defmodule Shlack.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :shlak,
+    [app: :shlack,
      version: "0.0.1",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
@@ -17,9 +17,9 @@ defmodule Shlak.Mixfile do
   #
   # Type `mix help compile.app` for more information.
   def application do
-    [mod: {Shlak, []},
+    [mod: {Shlack, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :oauth2, :ueberauth_github, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,13 @@ defmodule Shlak.Mixfile do
      {:phoenix_html, "~> 2.6"},
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:comeonin, "~> 2.4"},
+     {:guardian_db, "~> 0.7.0"},
+     {:guardian, "~> 0.13.0"},
+     {:ueberauth, "~> 0.2.0"},
+     {:ueberauth_identity, "~> 0.2.3"},
+     {:ueberauth_github, "~> 0.2.0"}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

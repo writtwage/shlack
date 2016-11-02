@@ -1,3 +1,3 @@
-defmodule Shlak.PageView do
-  use Shlak.Web, :view
+defmodule Shlack.PageView do
+  use Shlack.Web, :view
 end

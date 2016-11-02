@@ -1,3 +1,3 @@
-defmodule Shlak.Repo do
-  use Ecto.Repo, otp_app: :shlak
+defmodule Shlack.Repo do
+  use Ecto.Repo, otp_app: :shlack
 end
