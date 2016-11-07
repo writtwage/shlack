@@ -13,10 +13,25 @@ defmodule Shlack.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :browser_auth do
+    plug Guardian.Plug.VerifySession
+    plug Guardian.Plug.LoadResource
+  end
+
   scope "/", Shlack do
-    pipe_through :browser # Use the default browser stack
+    pipe_through [:browser, :browser_auth] # Use the default browser stack
 
     get "/", PageController, :index
+    delete "/logout", AuthController, :logout
+    get "/credentials", AuthController, :credentials
+    get "/signup", SignupController, :new
+  end
+
+  scope "/auth", Shlack do
+    pipe_through [:browser, :browser_auth] # Use the default browser stack
+    get "/:identity", AuthController, :login
+    get "/:identity/callback", AuthController, :callback
+    post "/:identity/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.

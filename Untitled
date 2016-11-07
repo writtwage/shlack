@@ -1,9 +1,8 @@
+defmodule PhoenixGuardian.GuardianToken do
+  use PhoenixGuardian.Web, :model
 
-defmodule Shlack.GuardianToken do
-  use Shlack.Web, :model
-
-  alias Shlack.Repo
-  alias Shlack.GuardianSerializer
+  alias PhoenixGuardian.Repo
+  alias PhoenixGuardian.GuardianSerializer
 
   @primary_key {:jti, :string, []}
   @derive {Phoenix.Param, key: :jti}
@@ -21,7 +20,7 @@ defmodule Shlack.GuardianToken do
   def for_user(user) do
     case GuardianSerializer.for_token(user) do
       {:ok, aud} ->
-        (from t in Shlack.GuardianToken, where: t.sub == ^aud)
+        (from t in PhoenixGuardian.GuardianToken, where: t.sub == ^aud)
           |> Repo.all
       _ -> []
     end

@@ -29,12 +29,16 @@ defmodule Shlack.Web do
   def controller do
     quote do
       use Phoenix.Controller
+      use Guardian.Phoenix.Controller
+      alias Guardian.Plug.EnsureAuthenticated
+      alias Guardian.Plug.EnsurePermissions
 
       alias Shlack.Repo
       import Ecto
-      import Ecto.Query
+      import Ecto.Query, only: [from: 1, from: 2]
 
       import Shlack.Router.Helpers
+      import Shlack.Controller.Helpers
       import Shlack.Gettext
     end
   end
@@ -44,7 +48,7 @@ defmodule Shlack.Web do
       use Phoenix.View, root: "web/templates"
 
       # Import convenience functions from controllers
-      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 2, view_module: 1]
+      import Phoenix.Controller, only: [get_csrf_token: 0, get_flash: 1, get_flash: 2, view_module: 1]
 
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
@@ -52,6 +56,7 @@ defmodule Shlack.Web do
       import Shlack.Router.Helpers
       import Shlack.ErrorHelpers
       import Shlack.Gettext
+      import Shlack.ViewHelpers
     end
   end
 
