@@ -38,7 +38,7 @@ defmodule Shlack.AuthController do
   def credentials(conn, _, nil, _) do
     conn
     |> put_status(401)
-    |> render "failed_credentials.json", error: "not_authenticated"
+    |> render("failed_credentials.json", error: "not_authenticated")
   end
 
   def credentials(conn, _params, current_user, {:ok, claims}) do
